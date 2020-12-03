@@ -1,6 +1,7 @@
 import pandas as pd
 import gmplot 
 import webbrowser
+from IPython.display import IFrame
 
 df = pd.read_excel("AI_TEST_201104.xlsx",sheet_name = '03_자동측정망')
 # print (df1['이름'])
@@ -42,10 +43,10 @@ gmap1.plot(latitude_list1, longitude_list1,'cornflowerblue', edge_width = 2.5)
 gmap1.scatter( latitude_list2, longitude_list2, '#FFFFFF',size = 40, marker = True ) 
 gmap1.plot(latitude_list2, longitude_list2,'cornflowerblue', edge_width = 2.5) 
 gmap1.draw('map1.html')
-from IPython.display import IFrame
 
-IFrame(src='map1.html', width=700, height=600)
-# webbrowser.open_new("map1.html")
+
+# IFrame(src='map1.html', width=700, height=600)
+webbrowser.open_new("map1.html")
 # gmap2.scatter( latitude_list2, longitude_list2, '#FFFFFF',size = 40, marker = True ) 
 # gmap2.plot(latitude_list2, longitude_list2,'cornflowerblue', edge_width = 2.5) 
 # gmap2.draw('map2.html')
