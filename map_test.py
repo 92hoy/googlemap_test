@@ -1,5 +1,7 @@
 import pandas as pd
 import gmplot 
+import webbrowser
+
 df = pd.read_excel("AI_TEST_201104.xlsx",sheet_name = '03_자동측정망')
 # print (df1['이름'])
 # print (df1['TM_XAXS'])
@@ -37,9 +39,14 @@ gmap2 = gmplot.GoogleMapPlotter(37.47683764223752, 127.35473560405816, 13)
   
 gmap1.scatter( latitude_list1, longitude_list1, '#FF0000',size = 40, marker = True ) 
 gmap1.plot(latitude_list1, longitude_list1,'cornflowerblue', edge_width = 2.5) 
+gmap1.scatter( latitude_list2, longitude_list2, '#FFFFFF',size = 40, marker = True ) 
+gmap1.plot(latitude_list2, longitude_list2,'cornflowerblue', edge_width = 2.5) 
 gmap1.draw('map1.html')
 
-gmap2.scatter( latitude_list2, longitude_list2, '#FFFFFF',size = 40, marker = True ) 
-gmap2.plot(latitude_list2, longitude_list2,'cornflowerblue', edge_width = 2.5) 
-gmap2.draw('map2.html')
+webbrowser.open_new("map1.html")
+# gmap2.scatter( latitude_list2, longitude_list2, '#FFFFFF',size = 40, marker = True ) 
+# gmap2.plot(latitude_list2, longitude_list2,'cornflowerblue', edge_width = 2.5) 
+# gmap2.draw('map2.html')
   
+# IPython.display.HTML(open('map1.html').read())
+# IPython.display.HTML(open('map2.html').read())
